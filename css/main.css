@@ -1,0 +1,494 @@
+/*colors*/
+.color-primary-0 { color: #17181A }	/* Main Dark Primary color */
+.color-primary-1 { color: #3B4655 }
+.color-primary-2 { color: #2D323A }
+.color-primary-3 { color: #1E232A }
+.color-primary-4 { color: #1E2939 }
+
+.color-primary-0 { color: #3A3B3E }	/* Main Medium Primary color */
+.color-primary-1 { color: #464C54 }
+.color-primary-2 { color: #303235 }
+.color-primary-3 { color: #26292B }
+.color-primary-4 { color: #1B1D20 }
+
+.color-primary-0 { color: #D5D8DC }	/* Main Light Primary color */
+.color-primary-1 { color: #8B9BB1 }
+.color-primary-2 { color: #AAB6C5 }
+.color-primary-3 { color: #A0A5AC }
+.color-primary-4 { color: #8C9199 }
+
+/*style reset*/
+html, html *{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font: 100% inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    color: #D5D8DC;
+}
+ul li{
+    list-style: none;
+}
+:focus{
+    outline: 0;
+}
+button{
+    background: none;
+    cursor: pointer;
+}
+
+/*basic styling*/
+:root{
+    --width: 0px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Montserrat, sans-serif;
+}
+p{
+    font-family: Raleway, sans-serif;
+}
+.next{
+    color: #D5D8DC;
+    background:none;
+    border: 2px #D5D8DC solid;
+    padding: .2em .5em;
+    font-variant: small-caps;
+    font-family: Raleway, sans-serif;
+    border-radius: 50px;
+}
+.next:hover{
+    border: 2px black solid;
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.page-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.next{
+    opacity: 0;
+}
+
+.title-section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1E2939;
+    top: 0;
+}
+.title-card{
+    text-align: center;
+    position: relative;
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #8B9BB1;
+    top: 0;
+    left: -100%;
+}
+.intro-card{
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 480px;
+}
+
+.skill-section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3B4655;
+    top: 0;
+    left: -100%;
+}
+.skill-card{
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 480px;
+}
+
+.edu-section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #26292B;
+    top: 0;
+    left: -100%;
+ }
+.edu-card{
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 480px;
+}
+
+@media only screen and (max-width: 499px){
+
+    .title-card{
+        height: 100%;
+    }
+    .title-card ul{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .title-card h1{
+        position: relative;
+        left: -100%;
+        font-size: 1.4em;
+        font-variant: small-caps;
+        white-space: nowrap;
+    }
+    .title-card h1 span{
+        border-bottom: white solid 2px;
+        padding-left: .15em;
+        padding-right: .15em;
+    }
+    .titleH1{
+        position: relative;
+        left: 0;
+    }
+    .title-card li{
+        margin-bottom: 5em;
+    }
+    .title-card .next{
+        font-size: 1.4em;
+        width: 6em;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .intro-bottom{
+        display: none;
+    }
+    .intro-portrait{
+        display: none;
+    }
+    .intro-card{
+        width: 94%;
+        height: 96%;
+    }
+    .intro-content{
+        height: 100%;
+    }
+    .intro-text-container {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 50px);
+    }
+    .intro-text{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .intro-contact{
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .intro-nav{
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        background-color: #1E232A;
+    }
+    .intro-nav .next{
+        position: relative;
+        float: right;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        height: 100%;
+        width: 3em;
+    }
+    .intro-nav ul{
+        height: 100%;
+        position: relative;
+        float: left;
+    }
+    .intro-nav li{
+        height: 100%;
+        display: inline-block;
+    }
+    .intro-nav button:not(.next){
+        font-size: 1.6em;
+        width: 5em;
+        height: 100%;
+        font-variant: small-caps;
+        border-right: 1px #D5D8DC solid;
+        font-family: Montserrat, sans-serif;
+    }
+    .intro-nav button:not(.next):hover{
+        background-color: #5a5d61;
+    }
+
+    .skill-card{
+        position: relative;
+        width: 94%;
+        height: 96%;
+    }
+    .skill-nav{
+        width: 100%;
+        height: 50px;
+    }
+    .skill-nav li{
+        display: inline-block;
+    }
+    .skill-nav li:nth-of-type(2){
+        margin: .2em 3em;
+        float: right;
+    }
+    .skill-nav li:first-of-type{
+        margin: .2em -9.5em .2em auto;
+    }
+    .skill-img{
+        cursor: pointer;
+        position: relative;
+        width: 98%;
+        background-color: #8C9199;
+        border-radius: 10px;
+        height: 20px;
+        transition: .2s linear;
+    }
+    .skill-img-hidden{
+        height: 20%;
+    }
+    .skill-content{
+        position: relative;
+        margin-bottom: 2em;
+        overflow: hidden;
+        height: 100px;
+        transition: .2s linear;
+    }
+    .skill-hidden{
+        height: 0;
+    }
+
+    .edu-card{
+        width: 94%;
+        height: 96%;
+    }
+
+}
+
+@media only screen and (min-width: 500px){
+    .title-card ul{
+        position: relative;
+    }
+    .title-card li{
+        margin-bottom: 2em;
+    }
+    .title-card h1{
+        position: relative;
+        left: -100%;
+        font-size: 2em;
+        font-variant: small-caps;
+        letter-spacing: .1em;
+        white-space: nowrap;
+    }
+    .title-card h1 span{
+        border-bottom: white solid 2px;
+        padding-left: .15em;
+        padding-right: .15em;
+    }
+    .titleH1{
+        position: relative;
+    }
+    .next{
+        position: relative;
+        font-size: 1.6em;
+    }
+    .title-section .next{
+        margin: 3em;
+    }
+
+    .intro-bottom{
+        position: absolute;
+        bottom: 0;
+        height: 50%;
+        width: 100%;
+        background: #17181A;
+        z-index: 0;
+    }
+    .intro-card{
+        width: var(--width);
+        height: 500px;
+        background: #A0A5AC;
+        z-index: 1;
+        box-shadow: 0 0 5px 0 #1E2939;
+    }
+    .intro-content{
+        height: calc(100% - 50px);
+        width: 100%;
+        display: grid;
+        grid-template-columns: 260px calc(100% - 260px);
+    }
+    .intro-portrait{
+        width: 100%;
+    }
+    .intro-portrait img{
+        position: relative;
+        width: 200px;
+        height : 300px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .intro-text-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .intro-text{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .intro-contact{
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .intro-nav{
+        background-color: #464C54;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+    }
+    .intro-nav ul{
+        height: 100%;
+        position: relative;
+        float: left;
+    }
+    .intro-nav .next{
+        position: relative;
+        float: right;
+        border: none;
+        border-left: 1px #D5D8DC solid;
+        border-radius: 0;
+        padding: 0;
+        height: 100%;
+        width: 3em;
+    }
+    .intro-nav li{
+        height: 100%;
+        display: inline-block;
+    }
+    .intro-nav button:not(.next){
+        font-size: 1.6em;
+        width: 5em;
+        height: 100%;
+        font-variant: small-caps;
+        border-right: 1px #D5D8DC solid;
+        font-family: Montserrat, sans-serif;
+    }
+    .intro-nav button:not(.next):hover{
+        background-color: #5a5d61;
+    }
+
+    .skill-card{
+        position: relative;
+        height: 90%;
+        background-color: #8B9BB1;
+    }
+    .skill-nav{
+        width: 100%;
+        height: 50px;
+    }
+    .skill-nav li{
+        display: inline-block;
+    }
+    .skill-nav li:nth-of-type(2){
+        margin: .2em 3em;
+        float: right;
+    }
+    .skill-nav li:first-of-type{
+        margin: .2em -9.5em .2em auto;
+    }
+    .skill-img{
+        cursor: pointer;
+        position: relative;
+        width: 60%;
+        background-color: #8C9199;
+        left: 20%;
+        border-radius: 10px;
+        height: 20px;
+        transition: .2s linear;
+    }
+    .skill-img-hidden{
+        height: 200px;
+    }
+    .skill-content{
+        position: relative;
+        left: 20%;
+        margin-bottom: 2em;
+        width: 60%;
+        overflow: hidden;
+        height: 180px;
+        transition: .2s linear;
+    }
+    .skill-hidden{
+        height: 0;
+    }
+}
+
+@media only screen and (min-width: 720px){
+    .title-card h1{
+        font-size: 2.5em;
+        letter-spacing: .15em;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .title-card li{
+        margin-bottom: 3em;
+    }
+    .title-card h1{
+        font-size: 3em;
+        letter-spacing: .2em;
+    }
+}
