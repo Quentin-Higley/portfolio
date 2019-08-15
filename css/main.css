@@ -34,9 +34,13 @@ ul li{
 :focus{
     outline: 0;
 }
-button{
+button {
     background: none;
     cursor: pointer;
+    font-variant: small-caps;
+}
+a{
+    text-decoration: none;
 }
 
 /*basic styling*/
@@ -46,22 +50,20 @@ button{
 
 h1, h2, h3, h4, h5 {
     font-family: Montserrat, sans-serif;
+    font-variant: small-caps;
 }
-p{
+p, table{
     font-family: Raleway, sans-serif;
 }
 .next{
     color: #D5D8DC;
     background:none;
-    border: 2px #D5D8DC solid;
-    padding: .2em .5em;
     font-variant: small-caps;
     font-family: Raleway, sans-serif;
-    border-radius: 50px;
 }
 .next:hover{
-    border: 2px black solid;
-    color: #000;
+    border: 2px #1B1D20 solid;
+    color: #1B1D20;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -96,8 +98,9 @@ p{
     width: 100%;
     height: 100%;
     background: #8B9BB1;
-    top: 0;
-    left: -100%;
+    top: -100%;
+    left: 0;
+
 }
 .intro-card{
     text-align: center;
@@ -115,8 +118,8 @@ p{
     width: 100%;
     height: 100%;
     background: #3B4655;
-    top: 0;
-    left: -100%;
+    left: 0;
+    top: -100%;
 }
 .skill-card{
     text-align: center;
@@ -134,8 +137,8 @@ p{
     width: 100%;
     height: 100%;
     background: #26292B;
-    top: 0;
-    left: -100%;
+    left: 0;
+    top: -100%;
  }
 .edu-card{
     text-align: center;
@@ -147,6 +150,16 @@ p{
     width: 700px;
     height: 480px;
 }
+#skill-soft{
+    background: url("../img/software.png");
+}
+#skill-web{
+    background: url("../img/web.png");
+}
+#skill-app{
+    background: url("../img/App.png");
+}
+
 
 @media only screen and (max-width: 499px){
 
@@ -178,13 +191,19 @@ p{
     .title-card li{
         margin-bottom: 5em;
     }
-    .title-card .next{
+    .title-section .next{
         font-size: 1.4em;
         width: 6em;
         position: absolute;
         bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
+        border: 2px #D5D8DC solid;
+        padding: .2em .5em;
+        border-radius: 50px;
+    }
+    .title-section .next:hover{
+        border: solid 2px #1B1D20;
     }
 
     .intro-bottom{
@@ -228,35 +247,43 @@ p{
         position: absolute;
         bottom: 0;
         background-color: #1E232A;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
     .intro-nav .next{
+        height: 50px;
         position: relative;
         float: right;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        height: 100%;
-        width: 3em;
+        width: 33%;
+        margin-left: -15px;
     }
-    .intro-nav ul{
-        height: 100%;
+    .intro-nav .next:hover{
+        color: #8B9BB1;
+        border: none;
+        border-left:2px solid #1B1D20;
+        border-bottom-right-radius: 5px;
+    }
+    .intro-left{
         position: relative;
         float: left;
+        width: 66%;
     }
-    .intro-nav li{
-        height: 100%;
-        display: inline-block;
+    .tabSwitch{
+        height: 50px;
+        border-right: 2px solid #A0A5AC;
+        font-size: 1em;
+        width: 50%;
     }
-    .intro-nav button:not(.next){
-        font-size: 1.6em;
-        width: 5em;
-        height: 100%;
-        font-variant: small-caps;
-        border-right: 1px #D5D8DC solid;
-        font-family: Montserrat, sans-serif;
+    .tabSwitch:first-of-type{
+        border-bottom-right-radius: 5px;
     }
-    .intro-nav button:not(.next):hover{
-        background-color: #5a5d61;
+    .tabSwitch:nth-of-type(2){
+        margin-left: -4px;
+    }
+    .tabSwitch:hover{
+        color: #8B9BB1;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-bottom-left-radius: 5px;
     }
 
     .skill-card{
@@ -309,6 +336,9 @@ p{
 }
 
 @media only screen and (min-width: 500px){
+    .next{
+        font-size: 1.6em;
+    }
     .title-card ul{
         position: relative;
     }
@@ -331,12 +361,17 @@ p{
     .titleH1{
         position: relative;
     }
-    .next{
-        position: relative;
-        font-size: 1.6em;
-    }
     .title-section .next{
-        margin: 3em;
+        font-size: 1.4em;
+        width: 6em;
+        position: relative;
+        border: 2px #D5D8DC solid;
+        padding: .2em .5em;
+        border-radius: 50px;
+    }
+    .title-section .next:hover{
+        color: #8B9BB1;
+        border: solid 2px #8B9BB1;
     }
 
     .intro-bottom{
@@ -376,6 +411,7 @@ p{
         height: 100%;
     }
     .intro-text{
+        padding: 1em;
         height: 100%;
         width: 100%;
         position: absolute;
@@ -391,6 +427,24 @@ p{
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+        padding: 1em;
+    }
+    .intro-contact h1{
+        border-bottom: solid 2px #D5D8DC;
+        margin-bottom: .5em;
+        font-size: 2.5em;
+    }
+    .intro-contact table{
+        width: 100%;
+        font-size: 1.4em;
+    }
+    .intro-contact td:nth-of-type(odd){
+        padding-left: 1em;
+        text-align: left;
+    }
+    .intro-contact td:nth-of-type(even){
+        padding-right: 1em;
+        text-align: right;
     }
     .intro-nav{
         background-color: #464C54;
@@ -399,35 +453,56 @@ p{
         width: 100%;
         height: 50px;
     }
-    .intro-nav ul{
-        height: 100%;
+    .intro-left{
         position: relative;
         float: left;
     }
     .intro-nav .next{
         position: relative;
         float: right;
-        border: none;
-        border-left: 1px #D5D8DC solid;
-        border-radius: 0;
-        padding: 0;
-        height: 100%;
-        width: 3em;
-    }
-    .intro-nav li{
-        height: 100%;
-        display: inline-block;
-    }
-    .intro-nav button:not(.next){
-        font-size: 1.6em;
         width: 5em;
-        height: 100%;
-        font-variant: small-caps;
-        border-right: 1px #D5D8DC solid;
-        font-family: Montserrat, sans-serif;
+        height: 50px;
+        border-left: 2px solid #A0A5AC;;
     }
-    .intro-nav button:not(.next):hover{
-        background-color: #5a5d61;
+    .intro-nav .next:hover{
+        color: #8B9BB1;
+        border: none;
+        border-left: #A0A5AC solid 2px;
+    }
+    .tabSwitch{
+        border-right: 2px solid #A0A5AC;
+        font-size: 1.6em;
+        height: 50px;
+        width: 5em;
+    }
+    .tabSwitch:nth-of-type(2){
+        margin-left: -4px;
+    }
+    .tabSwitch:hover{
+        color: #8B9BB1;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .intro-download{
+        position: relative;
+    }
+    .download-button{
+        font-size: 1.6em;
+        height: 50px;
+        border: 3px solid #D5D8DC;
+        padding-left: 1em;
+        padding-right: 1em;
+        border-radius: 50px;
+    }
+    .download-content{
+        font-size: 1.6em;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50px;
+        display: none;
+    }
+    .intro-download:hover .download-content {
+        display: inherit;
     }
 
     .skill-card{
@@ -449,13 +524,32 @@ p{
     .skill-nav li:first-of-type{
         margin: .2em -9.5em .2em auto;
     }
+    .skill-wrapper{
+        position: relative;
+        height: calc(100% - 50px);
+    }
+    .skill-wrapper-inner{
+        position: absolute;
+        top: 5%;
+    }
+    .skill-wrapper-inner1{
+        position: absolute;
+        top: 35%;
+    }
+    .skill-wrapper-inner2{
+        position: absolute;
+        top: 65%;
+    }
+    .skill-wrapper-inner-hidden{
+
+    }
     .skill-img{
         cursor: pointer;
         position: relative;
         width: 60%;
         background-color: #8C9199;
         left: 20%;
-        border-radius: 10px;
+        border-radius: 15px;
         height: 20px;
         transition: .2s linear;
     }

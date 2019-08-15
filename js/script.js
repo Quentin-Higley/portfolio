@@ -31,29 +31,23 @@ $(document).ready(function () {
     }
     });
 
-$(document).on("tap", function () {
-    window.alert("alerted");
-});
-
 $(".next").click(function () {
     let $buttonSwitch = this.id;
     let $titleSec = $(".title-section");
     let $introSec = $(".intro-section");
     let $skillSec = $(".skill-section");
-    let $eduSec = $(".edu-section");
     let $titleCard = $(".title-card");
     let $introCard = $(".intro-card");
     let $skillCard = $(".skill-card");
-    let $eduCard = $(".edu-card");
 
     if ($buttonSwitch === 'title'){
         $titleSec.css('z-index', 0);
         $introSec.css('z-index', 1);
         $titleSec.delay(400).animate({
-            left: "-100%"
+            top: "-100%"
         });
         $introSec.animate({
-            left: "0"
+            top: "0"
         }, "linear");
         $titleCard.animate({
             opacity: "0"
@@ -66,10 +60,10 @@ $(".next").click(function () {
         $introSec.css('z-index', 0);
         $skillSec.css('z-index', 1);
         $introSec.delay(400).animate({
-            left: "-100%"
+            top: "-100%"
         });
         $skillSec.animate({
-            left: "0"
+            top: "0"
         }, "linear");
         $introCard.animate({
             opacity: "0"
@@ -80,35 +74,18 @@ $(".next").click(function () {
     }
     else if ($buttonSwitch === 'skill'){
         $skillSec.css('z-index', 0);
-        $eduSec.css('z-index', 1);
+        $titleSec.css('z-index', 1);
         $skillSec.delay(400).animate({
-            left: "-100%"
+            top: "-100%"
         });
-        $eduSec.animate({
-            left: "0"
+        $titleSec.animate({
+            top: "0"
         }, "linear");
         $skillCard.animate({
             opacity: "0"
         });
-        $eduCard.animate({
-            opacity: "1"
-        });
-    }
-    else if ($buttonSwitch === 'edu'){
-        $eduSec.css('z-index', 0);
-        $titleSec.css('z-index', 1);
-        $eduSec.delay(400).animate({
-            left: "-100%"
-        });
-        $titleSec.animate({
-            left: "0"
-        }, "linear");
-        $eduCard.animate({
-            opacity: "0"
-        });
         $titleCard.animate({
             opacity: "1"
-
         });
     }
 });
@@ -141,7 +118,138 @@ $(".tabSwitch").click(function () {
 
 $(".skill-img").click(function () {
     let $button = $(this);
+    let $id = this.id;
+    let $skillSoft = $(".skill-wrapper-inner");
+    let $skillWeb = $(".skill-wrapper-inner1");
+    let $skillApp = $(".skill-wrapper-inner2");
     $button.toggleClass("skill-img-hidden");
     $button.next().toggleClass("skill-hidden");
+
+    if($id === "skill-soft"){
+        //software display
+        if($skillSoft.hasClass('active') !== true){
+            $skillSoft.animate({
+                zIndex: "2"
+            },400);
+
+            $skillWeb.animate({
+                opacity: '0',
+                zIndex: '-3',
+                top: '100%'
+            },400);
+
+            $skillApp.animate({
+                opacity: '0',
+                zIndex: '-3',
+                top: '130%'
+            },400);
+            $skillSoft.addClass('active');
+        }
+        else{
+            $skillSoft.animate({
+                zIndex: "1"
+            },400);
+
+            $skillWeb.animate({
+                opacity: '1',
+                zIndex: '1',
+                top: '35%'
+            },400);
+
+            $skillApp.animate({
+                opacity: '1',
+                zIndex: '1',
+                top: '65%'
+            },400);
+            $skillSoft.removeClass('active');
+        }
+    }
+
+    else if($id === "skill-web"){
+        //web display
+        if($skillWeb.hasClass('active') !== true){
+            $skillSoft.animate({
+                opacity: '0',
+                zIndex: "-3",
+                top: '100%'
+            },400);
+
+            $skillWeb.animate({
+                opacity: '1',
+                zIndex: '2',
+                top: '5%'
+            },400);
+
+            $skillApp.animate({
+                opacity: '0',
+                zIndex: '-3',
+                top: '160%'
+            },400);
+            $skillWeb.addClass('active');
+        }
+        else{
+            $skillSoft.delay(100).animate({
+                opacity: '1',
+                zIndex: "1",
+                top: '5%'
+            },400);
+
+            $skillWeb.animate({
+                top: '35%',
+                opacity: '1',
+                zIndex: '1'
+            },400);
+
+            $skillApp.animate({
+                opacity: '1',
+                zIndex: '1',
+                top: '65%'
+            },400);
+            $skillWeb.removeClass('active');
+        }
+    }
+    else if($id === "skill-app"){
+        //app display
+        if($skillApp.hasClass('active') !== true){
+            $skillSoft.animate({
+                top: '100%',
+                opacity: '0',
+                zIndex: "-3"
+            },400);
+
+            $skillWeb.animate({
+                top: '130%',
+                opacity: '0',
+                zIndex: '-3'
+            },400);
+
+            $skillApp.animate({
+                top: '5%',
+                opacity: '1',
+                zIndex: '2'
+            },400);
+            $skillApp.addClass('active');
+        }
+        else{
+            $skillSoft.delay(100).animate({
+                top: '5%',
+                opacity: '1',
+                zIndex: "1"
+            },400);
+
+            $skillWeb.delay(200).animate({
+                top: '35%',
+                opacity: '1',
+                zIndex: '1'
+            },400);
+
+            $skillApp.animate({
+                top: '65%',
+                opacity: '1',
+                zIndex: '1'
+            },400);
+            $skillApp.removeClass('active');
+        }
+    }
 });
 
