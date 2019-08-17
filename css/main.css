@@ -14,7 +14,7 @@
 .color-primary-0 { color: #D5D8DC }	/* Main Light Primary color */
 .color-primary-1 { color: #8B9BB1 }
 .color-primary-2 { color: #AAB6C5 }
-.color-primary-3 { color: #A0A5AC }
+.color-primary-3 { color: #AAB6C5 }
 .color-primary-4 { color: #8C9199 }
 
 /*style reset*/
@@ -26,7 +26,7 @@ html, html *{
     font: 100% inherit;
     vertical-align: baseline;
     box-sizing: border-box;
-    color: #D5D8DC;
+    color: #17181A;
 }
 ul li{
     list-style: none;
@@ -42,10 +42,10 @@ button {
 a{
     text-decoration: none;
 }
-
 /*basic styling*/
 :root{
     --width: 0px;
+    --sWidth: 0px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -63,7 +63,7 @@ p, table{
 }
 .next:hover{
     border: 2px #1B1D20 solid;
-    color: #1B1D20;
+    color: #3B4655;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -97,7 +97,7 @@ p, table{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #8B9BB1;
+    background: #1E2939;
     top: -100%;
     left: 0;
 
@@ -117,7 +117,7 @@ p, table{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #3B4655;
+    background: #1E2939;
     left: 0;
     top: -100%;
 }
@@ -150,15 +150,6 @@ p, table{
     width: 700px;
     height: 480px;
 }
-#skill-soft{
-    background: url("../img/software.png");
-}
-#skill-web{
-    background: url("../img/web.png");
-}
-#skill-app{
-    background: url("../img/App.png");
-}
 
 
 @media only screen and (max-width: 499px){
@@ -174,13 +165,14 @@ p, table{
     }
     .title-card h1{
         position: relative;
-        left: -100%;
+        left: -200%;
         font-size: 1.4em;
         font-variant: small-caps;
         white-space: nowrap;
     }
     .title-card h1 span{
-        border-bottom: white solid 2px;
+        color: #D5D8DC;
+        border-bottom: #D5D8DC solid 2px;
         padding-left: .15em;
         padding-right: .15em;
     }
@@ -209,12 +201,17 @@ p, table{
     .intro-bottom{
         display: none;
     }
-    .intro-portrait{
-        display: none;
+    .intro-portrait img{
+        position: relative;
+        width: 150px;
+        height : 225px;
+        margin-top: 1em;
     }
     .intro-card{
+        background: #AAB6C5;
         width: 94%;
         height: 96%;
+        border-radius: 5px;
     }
     .intro-content{
         height: 100%;
@@ -225,12 +222,19 @@ p, table{
         height: calc(100% - 50px);
     }
     .intro-text{
+        padding: .7em;
         height: 100%;
         width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+    }
+    .intro-text h1{
+        border-bottom: solid 2px #17181A;
+    }
+    .intro-text p{
+        text-align: left;
     }
     .intro-contact{
         opacity: 0;
@@ -241,6 +245,52 @@ p, table{
         left: 50%;
         transform: translate(-50%,-50%);
     }
+    .intro-contact table{
+        width: 100%;
+    }
+    .intro-contact td:nth-of-type(odd){
+        padding-left: 1em;
+        text-align: left;
+    }
+    .intro-contact td:nth-of-type(even){
+        padding-right: 1em;
+        text-align: right;
+    }
+    .intro-link{
+        text-align: center;
+        width: 100%;
+        height: 45px;
+        margin-top: .8em;
+        margin-bottom: 1em;
+    }
+    .intro-link img{
+        width: 45px;
+    }
+    .intro-link img:hover{
+        filter: invert(1);
+    }
+    .intro-download{
+        position: relative;
+    }
+    .download-button{
+        font-size: 1.6em;
+        height: 50px;
+        border: 3px solid #17181A;
+        padding-left: 1em;
+        padding-right: 1em;
+        border-radius: 50px;
+    }
+    .download-content{
+        font-size: 1.6em;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50px;
+        display: none;
+    }
+    .intro-download:hover .download-content {
+        display: inherit;
+    }
     .intro-nav{
         width: 100%;
         height: 50px;
@@ -249,6 +299,7 @@ p, table{
         background-color: #1E232A;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
+        z-index: 1000;
     }
     .intro-nav .next{
         height: 50px;
@@ -269,68 +320,21 @@ p, table{
         width: 66%;
     }
     .tabSwitch{
+        color: #D5D8DC;
         height: 50px;
-        border-right: 2px solid #A0A5AC;
+        border-right: 2px solid #AAB6C5;
         font-size: 1em;
         width: 50%;
     }
     .tabSwitch:first-of-type{
-        border-bottom-right-radius: 5px;
     }
     .tabSwitch:nth-of-type(2){
         margin-left: -4px;
     }
     .tabSwitch:hover{
-        color: #8B9BB1;
+        color: #3B4655;
         background-color: rgba(0, 0, 0, 0.4);
         border-bottom-left-radius: 5px;
-    }
-
-    .skill-card{
-        position: relative;
-        width: 94%;
-        height: 96%;
-    }
-    .skill-nav{
-        width: 100%;
-        height: 50px;
-    }
-    .skill-nav li{
-        display: inline-block;
-    }
-    .skill-nav li:nth-of-type(2){
-        margin: .2em 3em;
-        float: right;
-    }
-    .skill-nav li:first-of-type{
-        margin: .2em -9.5em .2em auto;
-    }
-    .skill-img{
-        cursor: pointer;
-        position: relative;
-        width: 98%;
-        background-color: #8C9199;
-        border-radius: 10px;
-        height: 20px;
-        transition: .2s linear;
-    }
-    .skill-img-hidden{
-        height: 20%;
-    }
-    .skill-content{
-        position: relative;
-        margin-bottom: 2em;
-        overflow: hidden;
-        height: 100px;
-        transition: .2s linear;
-    }
-    .skill-hidden{
-        height: 0;
-    }
-
-    .edu-card{
-        width: 94%;
-        height: 96%;
     }
 
 }
@@ -352,9 +356,11 @@ p, table{
         font-variant: small-caps;
         letter-spacing: .1em;
         white-space: nowrap;
+
     }
     .title-card h1 span{
-        border-bottom: white solid 2px;
+        color: #D5D8DC;
+        border-bottom: #D5D8DC solid 2px;
         padding-left: .15em;
         padding-right: .15em;
     }
@@ -385,7 +391,7 @@ p, table{
     .intro-card{
         width: var(--width);
         height: 500px;
-        background: #A0A5AC;
+        background: #AAB6C5;
         z-index: 1;
         box-shadow: 0 0 5px 0 #1E2939;
     }
@@ -411,13 +417,20 @@ p, table{
         height: 100%;
     }
     .intro-text{
-        padding: 1em;
+        padding: 35px 1.5em 1.5em 1.5em;
         height: 100%;
         width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
+    }
+    .intro-text h1{
+        border-bottom: solid 2px #17181A;
+    }
+    .intro-text p{
+        margin: 1em .5em;
+        text-align: left;
     }
     .intro-contact{
         opacity: 0;
@@ -427,12 +440,26 @@ p, table{
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        padding: 1em;
+        padding: 1.5em;
+        z-index: -3;
     }
     .intro-contact h1{
-        border-bottom: solid 2px #D5D8DC;
+        border-bottom: solid 2px #17181A;
         margin-bottom: .5em;
         font-size: 2.5em;
+    }
+    .intro-link{
+        text-align: right;
+        width: 100%;
+        height: 45px;
+        margin-top: .8em;
+        margin-bottom: 1em;
+    }
+    .intro-link img{
+        width: 45px;
+    }
+    .intro-link img:hover{
+        filter: invert(1);
     }
     .intro-contact table{
         width: 100%;
@@ -462,15 +489,16 @@ p, table{
         float: right;
         width: 5em;
         height: 50px;
-        border-left: 2px solid #A0A5AC;;
+        border-left: 2px solid #AAB6C5;;
     }
     .intro-nav .next:hover{
         color: #8B9BB1;
         border: none;
-        border-left: #A0A5AC solid 2px;
+        border-left: #AAB6C5 solid 2px;
     }
     .tabSwitch{
-        border-right: 2px solid #A0A5AC;
+        color: #D5D8DC;
+        border-right: 2px solid #AAB6C5;
         font-size: 1.6em;
         height: 50px;
         width: 5em;
@@ -484,11 +512,14 @@ p, table{
     }
     .intro-download{
         position: relative;
+        width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .download-button{
         font-size: 1.6em;
         height: 50px;
-        border: 3px solid #D5D8DC;
+        border: 3px solid #17181A;
         padding-left: 1em;
         padding-right: 1em;
         border-radius: 50px;
@@ -507,70 +538,129 @@ p, table{
 
     .skill-card{
         position: relative;
-        height: 90%;
-        background-color: #8B9BB1;
+        width: var(--sWidth);
+        height: 100%;
+        background-color: #AAB6C5;
     }
     .skill-nav{
+        position: relative;
         width: 100%;
         height: 50px;
+        background-color: #5c6e84;
     }
-    .skill-nav li{
-        display: inline-block;
-    }
-    .skill-nav li:nth-of-type(2){
-        margin: .2em 3em;
-        float: right;
-    }
-    .skill-nav li:first-of-type{
-        margin: .2em -9.5em .2em auto;
-    }
-    .skill-wrapper{
-        position: relative;
-        height: calc(100% - 50px);
-    }
-    .skill-wrapper-inner{
+    .skill-nav h1{
         position: absolute;
+        display: inline-block;
+        width: 10em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .skill-nav .next{
+        position: relative;
+        float: right;
+        height: 100%;
+        width: 5em;
+    }
+    .skill-content-container{
+        height: calc(100% - 50px);
+        position: relative;
+    }
+    .skill-item{
+        position: relative;
         top: 5%;
     }
-    .skill-wrapper-inner1{
-        position: absolute;
-        top: 35%;
-    }
-    .skill-wrapper-inner2{
-        position: absolute;
-        top: 65%;
-    }
-    .skill-wrapper-inner-hidden{
-
-    }
     .skill-img{
-        cursor: pointer;
-        position: relative;
-        width: 60%;
-        background-color: #8C9199;
-        left: 20%;
-        border-radius: 15px;
-        height: 20px;
-        transition: .2s linear;
-    }
-    .skill-img-hidden{
-        height: 200px;
-    }
-    .skill-content{
-        position: relative;
-        left: 20%;
-        margin-bottom: 2em;
-        width: 60%;
         overflow: hidden;
-        height: 180px;
-        transition: .2s linear;
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+        background-color: aquamarine;
+        border-radius: 15px;
+        height: 200px;
+        width: 400px;
+        transition: .4s;
     }
-    .skill-hidden{
+    .skill-img h2{
+        position: relative;
+    }
+    .skill-img p {
+        margin: .5em;
+    }
+    .arrow{
+        position: absolute;
+        cursor: pointer;
+        width: 25px;
+        bottom: 0;
+        transition: .4s;
+        left: 50%;
+        transform: rotate(360deg) translateX(-50%);
+        transform-origin: center;
+    }
+    .skill-item-content{
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+        width: 0;
+        overflow: hidden;
         height: 0;
+        transition: .4s;
+        background-color: crimson;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .skill-graph{
+        text-align: left;
+    }
+    .skill-graph-border{
+        height: 4px;
+        width: 60%;
+        background: #1E2939;
+        margin-left: 20%;
+    }
+    .skill-graph h4{
+        font-size: 1.2em;
+        margin-left: 20%;
+    }
+
+
+    .s-c-c1{
+        top: 5%;
+    }
+    .s-c-c2{
+        top: 10%;
+    }
+    .s-c-c3{
+        top: 15%;
+    }
+    .arrow:hover{
+        filter: invert(1);
+    }
+    .scActive{
+        height: 200px;
+        width: 90%;
+        padding: 1em;
+    }
+    .sActive{
+        height: 30px;
+        width: 90%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .arrowActive{
+        left: 50%;
+        transform: rotate(180deg) translateX(50%);
+        transform-origin: center;
     }
 }
 
 @media only screen and (min-width: 720px){
+    h1{
+        font-size: 2em;
+    }
     .title-card h1{
         font-size: 2.5em;
         letter-spacing: .15em;

@@ -29,7 +29,16 @@ $(document).ready(function () {
         width-= 100;
         document.documentElement.style.setProperty('--width', width + 'px');
     }
-    });
+    if(width > 700){
+        document.documentElement.style.setProperty('--sWidth', '700px');
+    }
+    else{
+        width-= 100;
+        document.documentElement.style.setProperty('--sWidth', width + 'px');
+    }
+
+});
+
 
 $(".next").click(function () {
     let $buttonSwitch = this.id;
@@ -99,6 +108,13 @@ $(window).on("resize", function () {
     else{
         document.documentElement.style.setProperty('--width', width + 'px');
     }
+    if(width > 700){
+        document.documentElement.style.setProperty('--sWidth', '700px');
+    }
+    else{
+        width-= 100;
+        document.documentElement.style.setProperty('--sWidth', width + 'px');
+    }
 });
 
 $(".tabSwitch").click(function () {
@@ -107,148 +123,186 @@ $(".tabSwitch").click(function () {
     let $introCont = $(".intro-contact");
 
     if (buttonSwitch === 'intro-text'){
-        $introText.css("opacity", "1");
-        $introCont.css("opacity", "0");
+        $introText.delay(200).animate({
+            opacity: '1',
+            zIndex: '3'
+        },100);
+        $introCont.animate({
+            opacity: '0',
+            zIndex: '-3'
+        });
     }
     else if (buttonSwitch === 'intro-cont'){
-        $introText.css("opacity", "0");
-        $introCont.css("opacity", "1");
+        $introText.animate({
+            opacity: '0',
+            zIndex: '-3'
+        },300);
+        $introCont.delay(200).animate({
+            opacity: '1',
+            zIndex: '3'
+        },100);
     }
 });
 
 $(".skill-img").click(function () {
-    let $button = $(this);
-    let $id = this.id;
-    let $skillSoft = $(".skill-wrapper-inner");
-    let $skillWeb = $(".skill-wrapper-inner1");
-    let $skillApp = $(".skill-wrapper-inner2");
-    $button.toggleClass("skill-img-hidden");
-    $button.next().toggleClass("skill-hidden");
+    let $button = this.id;
+    let $skillSoft = $('.s-c-c1');
+    let $arrow1 = $('.arrow1');
+    let $skillWeb = $('.s-c-c2');
+    let $arrow2 = $('.arrow2');
+    let $skillApp = $('.s-c-c3');
+    let $arrow3 = $('.arrow3');
+    let $h2_1 = $('.skill-h2-1');
+    let $h2_2 = $('.skill-h2-2');
+    let $h2_3 = $('.skill-h2-3');
 
-    if($id === "skill-soft"){
-        //software display
-        if($skillSoft.hasClass('active') !== true){
+    if($button === 'skill-soft'){
+        $(this).toggleClass('sActive');
+        $(this).next().toggleClass('scActive');
+        $arrow1.toggleClass('arrowActive');
+
+        if ($skillSoft.hasClass('.active') !== true){
+            $h2_1.animate({
+                left: '-40%'
+            });
+
+            $skillSoft.addClass('.active');
             $skillSoft.animate({
-                zIndex: "2"
-            },400);
-
+                top: '20%',
+                opacity: '1',
+                zIndex: '3'
+            });
             $skillWeb.animate({
-                opacity: '0',
-                zIndex: '-3',
-                top: '100%'
-            },400);
-
-            $skillApp.animate({
-                opacity: '0',
-                zIndex: '-3',
-                top: '130%'
-            },400);
-            $skillSoft.addClass('active');
-        }
-        else{
-            $skillSoft.animate({
-                zIndex: "1"
-            },400);
-
-            $skillWeb.animate({
-                opacity: '1',
-                zIndex: '1',
-                top: '35%'
-            },400);
-
-            $skillApp.animate({
-                opacity: '1',
-                zIndex: '1',
-                top: '65%'
-            },400);
-            $skillSoft.removeClass('active');
-        }
-    }
-
-    else if($id === "skill-web"){
-        //web display
-        if($skillWeb.hasClass('active') !== true){
-            $skillSoft.animate({
-                opacity: '0',
-                zIndex: "-3",
-                top: '100%'
-            },400);
-
-            $skillWeb.animate({
-                opacity: '1',
-                zIndex: '2',
-                top: '5%'
-            },400);
-
-            $skillApp.animate({
-                opacity: '0',
-                zIndex: '-3',
-                top: '160%'
-            },400);
-            $skillWeb.addClass('active');
-        }
-        else{
-            $skillSoft.delay(100).animate({
-                opacity: '1',
-                zIndex: "1",
-                top: '5%'
-            },400);
-
-            $skillWeb.animate({
-                top: '35%',
-                opacity: '1',
-                zIndex: '1'
-            },400);
-
-            $skillApp.animate({
-                opacity: '1',
-                zIndex: '1',
-                top: '65%'
-            },400);
-            $skillWeb.removeClass('active');
-        }
-    }
-    else if($id === "skill-app"){
-        //app display
-        if($skillApp.hasClass('active') !== true){
-            $skillSoft.animate({
-                top: '100%',
-                opacity: '0',
-                zIndex: "-3"
-            },400);
-
-            $skillWeb.animate({
-                top: '130%',
+                bottom: '0',
                 opacity: '0',
                 zIndex: '-3'
-            },400);
-
+            });
             $skillApp.animate({
-                top: '5%',
-                opacity: '1',
-                zIndex: '2'
-            },400);
-            $skillApp.addClass('active');
+                bottom: '0',
+                opacity: '0',
+                zIndex: '-3'
+            });
         }
         else{
-            $skillSoft.delay(100).animate({
+
+            $h2_1.animate({
+                left: '0'
+            });
+
+            $skillSoft.removeClass('.active');
+            $skillSoft.animate({
                 top: '5%',
                 opacity: '1',
-                zIndex: "1"
-            },400);
-
-            $skillWeb.delay(200).animate({
-                top: '35%',
+                zIndex: '3'
+            });
+            $skillWeb.animate({
+                top: '10%',
                 opacity: '1',
-                zIndex: '1'
-            },400);
-
+                zIndex: '3'
+            });
             $skillApp.animate({
-                top: '65%',
+                top: '15%',
                 opacity: '1',
-                zIndex: '1'
-            },400);
-            $skillApp.removeClass('active');
+                zIndex: '3'
+            });
+        }
+
+
+    }
+    else if($button === 'skill-web'){
+        $(this).toggleClass('sActive');
+        $(this).next().toggleClass('scActive');
+        $arrow2.toggleClass('arrowActive');
+
+        if ($skillWeb.hasClass('.active') !== true){
+            $h2_2.animate({
+                left: '-40%'
+            });
+            $skillWeb.addClass('.active');
+
+            $skillWeb.animate({
+                top: '-5%',
+                opacity: '1',
+                zIndex: '3'
+            });
+            $skillSoft.animate({
+                top: '0',
+                opacity: '0',
+                zIndex: '-3'
+            });
+            $skillApp.animate({
+                bottom: '0',
+                opacity: '0',
+                zIndex: '-3'
+            });
+        }
+        else{
+            $h2_2.animate({
+                left: '0'
+            });
+            $skillWeb.removeClass('.active');
+            $skillWeb.animate({
+                top: '10%',
+                opacity: '1',
+                zIndex: '3'
+            });
+            $skillSoft.animate({
+                top: '5%',
+                opacity: '1',
+                zIndex: '3'
+            });
+            $skillApp.animate({
+                top: '15%',
+                opacity: '1',
+                zIndex: '3'
+            });
+        }
+    }
+    else if($button === 'skill-app'){
+        $(this).toggleClass('sActive');
+        $(this).next().toggleClass('scActive');
+        $arrow3.toggleClass('arrowActive');
+        if ($skillApp.hasClass('.active') !== true){
+            $h2_3.animate({
+                left: '-35%'
+            });
+            $skillApp.addClass('.active');
+            $skillApp.animate({
+                top: '-10%',
+                opacity: '1',
+                zIndex: '3'
+            });
+            $skillSoft.animate({
+                top: '0',
+                opacity: '0',
+                zIndex: '-3'
+            });
+            $skillWeb.animate({
+                top: '0',
+                opacity: '0',
+                zIndex: '-3'
+            });
+        }
+        else{
+            $h2_3.animate({
+                left: '0'
+            });
+            $skillApp.removeClass('.active');
+            $skillApp.animate({
+                top: '15%',
+                opacity: '1',
+                zIndex: '3'
+            });
+            $skillSoft.animate({
+                top: '5%',
+                opacity: '1',
+                zIndex: '3'
+            });
+            $skillWeb.animate({
+                top: '10%',
+                opacity: '1',
+                zIndex: '3'
+            });
         }
     }
 });
