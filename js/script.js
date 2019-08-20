@@ -200,25 +200,25 @@ $(".skill-img").click(function () {
                 switch(i){
                     case 0:
                         $softGraph.eq(i).animate({
-                            width: '60%',
+                            width: '62%',
                         });
                         $softGraph.eq(i).css('background','1E2939');
                         break;
                     case 1:
                         $softGraph.eq(i).animate({
-                            width: '70%',
+                            width: '58%',
                         });
                         $softGraph.eq(i).css('background','1E2939');
                         break;
                     case 2:
                         $softGraph.eq(i).animate({
-                            width: '80%',
+                            width: '50%',
                         });
                         $softGraph.eq(i).css('background','1E2939');
                         break;
                     case 3:
                         $softGraph.eq(i).animate({
-                            width: '90%',
+                            width: '55%',
                         });
                         $softGraph.eq(i).css('background','1E2939');
                         break;
@@ -320,25 +320,25 @@ $(".skill-img").click(function () {
                 switch(i){
                     case 0:
                         $webGraph.eq(i).animate({
-                            width: '60%',
+                            width: '74%',
                         });
                         $webGraph.eq(i).css('background','1E2939');
                         break;
                     case 1:
                         $webGraph.eq(i).animate({
-                            width: '70%',
+                            width: '85%',
                         });
                         $webGraph.eq(i).css('background','1E2939');
                         break;
                     case 2:
                         $webGraph.eq(i).animate({
-                            width: '80%',
+                            width: '60%',
                         });
                         $webGraph.eq(i).css('background','1E2939');
                         break;
                     case 3:
                         $webGraph.eq(i).animate({
-                            width: '90%',
+                            width: '57%',
                         });
                         $webGraph.eq(i).css('background','1E2939');
                         break;
@@ -437,25 +437,25 @@ $(".skill-img").click(function () {
                 switch(i){
                     case 0:
                         $appGraph.eq(i).animate({
-                            width: '60%',
+                            width: '50%',
                         });
                         $appGraph.eq(i).css('background','1E2939');
                         break;
                     case 1:
                         $appGraph.eq(i).animate({
-                            width: '70%',
+                            width: '80%',
                         });
                         $appGraph.eq(i).css('background','1E2939');
                         break;
                     case 2:
                         $appGraph.eq(i).animate({
-                            width: '80%',
+                            width: '90%',
                         });
                         $appGraph.eq(i).css('background','1E2939');
                         break;
                     case 3:
                         $appGraph.eq(i).animate({
-                            width: '90%',
+                            width: '75%',
                         });
                         $appGraph.eq(i).css('background','1E2939');
                         break;
