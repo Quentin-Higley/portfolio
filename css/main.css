@@ -98,8 +98,8 @@ p, table{
     width: 100%;
     height: 100%;
     background: #1E2939;
-    top: -100%;
-    left: 0;
+    top: 0;
+    left: -100%;
 
 }
 .intro-card{
@@ -118,8 +118,8 @@ p, table{
     width: 100%;
     height: 100%;
     background: #1E2939;
-    left: 0;
-    top: -100%;
+    left: 100%;
+    top: 0;
 }
 .skill-card{
     text-align: center;
@@ -151,7 +151,7 @@ p, table{
     height: 480px;
 }
 
-
+/*mobile devices*/
 @media only screen and (max-width: 499px){
 
     .title-card{
@@ -268,6 +268,8 @@ p, table{
     }
     .intro-link img:hover{
         filter: invert(1);
+        -webkit-filter: invert(1);
+        -ms-filter: invert(1);
     }
     .intro-download{
         position: relative;
@@ -307,6 +309,7 @@ p, table{
         float: right;
         width: 33%;
         margin-left: -15px;
+        font-size: 1.5em;
     }
     .intro-nav .next:hover{
         color: #8B9BB1;
@@ -337,8 +340,136 @@ p, table{
         border-bottom-left-radius: 5px;
     }
 
+    .skill-card{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #AAB6C5;
+    }
+    .skill-nav{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #547fbe;
+    }
+    .skill-nav h1{
+        position: absolute;
+        display: inline-block;
+        width: 10em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .skill-nav .next{
+        position: relative;
+        float: right;
+        height: 100%;
+        width: 5em;
+        font-size: 1.5em;
+    }
+    .skill-content-container{
+        height: calc(100% - 50px);
+        position: relative;
+    }
+    .skill-item{
+        position: relative;
+        top: 5%;
+    }
+    .skill-img{
+        overflow: hidden;
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+        background-color: #547fbe;
+        border-radius: 15px;
+        height: 170px;
+        width: 300px;
+        transition: .4s;
+    }
+    .skill-img h2{
+        position: relative;
+    }
+    .skill-img p {
+        margin: .5em;
+    }
+    .arrow{
+        position: absolute;
+        cursor: pointer;
+        width: 25px;
+        bottom: 0;
+        transition: .4s;
+        left: 50%;
+        transform: rotate(360deg) translateX(-50%);
+        transform-origin: center;
+    }
+    .skill-item-content{
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+        width: 0;
+        overflow: hidden;
+        height: 0;
+        transition: .4s;
+        background-color: #7Db1ff;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .skill-graph{
+        text-align: left;
+    }
+    .skill-graph-border{
+        position: relative;
+        height: 10px;
+        width: 60%;
+        border: #1E2939 2px solid;
+        margin-left: 20%;
+    }
+    .skill-graph-progress{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: #1E2939;
+        height: 8px;
+    }
+    .skill-graph h4{
+        font-size: 1.2em;
+        margin-left: 20%;
+    }
+    .s-c-c1{
+        top: 5%;
+    }
+    .s-c-c2{
+        top: 10%;
+    }
+    .s-c-c3{
+        top: 15%;
+    }
+    .arrow:hover{
+        filter: invert(1);
+    }
+    .scActive{
+        height: 400px;
+        width: 90%;
+        padding: 1em;
+    }
+    .sActive{
+        height: 30px;
+        width: 90%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: #1B1D20 solid 2px;
+    }
+    .arrowActive{
+        left: 50%;
+        transform: rotate(180deg) translateX(50%);
+        transform-origin: center;
+    }
 }
-
+/*tablet devices*/
 @media only screen and (min-width: 500px){
     .next{
         font-size: 1.6em;
@@ -546,7 +677,7 @@ p, table{
         position: relative;
         width: 100%;
         height: 50px;
-        background-color: #5c6e84;
+        background-color: #547fbe;
     }
     .skill-nav h1{
         position: absolute;
@@ -558,9 +689,12 @@ p, table{
     }
     .skill-nav .next{
         position: relative;
-        float: right;
+        float: left;
         height: 100%;
         width: 5em;
+    }
+    .skill-nav .next:hover{
+        color: #D5D8DC;
     }
     .skill-content-container{
         height: calc(100% - 50px);
@@ -575,7 +709,7 @@ p, table{
         position: relative;
         transform: translateX(-50%);
         left: 50%;
-        background-color: aquamarine;
+        background-color: #547fbe;
         border-radius: 15px;
         height: 200px;
         width: 400px;
@@ -605,7 +739,7 @@ p, table{
         overflow: hidden;
         height: 0;
         transition: .4s;
-        background-color: crimson;
+        background-color: #7Db1ff;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
         padding: 0;
@@ -616,17 +750,24 @@ p, table{
         text-align: left;
     }
     .skill-graph-border{
-        height: 4px;
+        position: relative;
+        height: 10px;
         width: 60%;
-        background: #1E2939;
+        border: #1E2939 2px solid;
         margin-left: 20%;
+    }
+    .skill-graph-progress{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: #1E2939;
+        height: 8px;
     }
     .skill-graph h4{
         font-size: 1.2em;
         margin-left: 20%;
     }
-
-
     .s-c-c1{
         top: 5%;
     }
@@ -649,6 +790,7 @@ p, table{
         width: 90%;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        border-bottom: #1B1D20 solid 2px;
     }
     .arrowActive{
         left: 50%;
@@ -656,7 +798,7 @@ p, table{
         transform-origin: center;
     }
 }
-
+/*desktop devices*/
 @media only screen and (min-width: 720px){
     h1{
         font-size: 2em;
@@ -666,7 +808,7 @@ p, table{
         letter-spacing: .15em;
     }
 }
-
+/*large displays*/
 @media only screen and (min-width: 1200px){
     .title-card li{
         margin-bottom: 3em;
