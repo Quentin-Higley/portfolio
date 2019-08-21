@@ -42,6 +42,10 @@ button {
 a{
     text-decoration: none;
 }
+body{
+    background: url("../img/THIS.png") center fixed;
+    background-size: cover;
+}
 /*basic styling*/
 :root{
     --width: 0px;
@@ -56,7 +60,7 @@ p, table{
     font-family: Raleway, sans-serif;
 }
 .next{
-    color: #D5D8DC;
+    color: #17181A;
     background:none;
     font-variant: small-caps;
     font-family: Raleway, sans-serif;
@@ -81,7 +85,7 @@ p, table{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #1E2939;
+    background: rgba(213, 216, 220, 0.7);
     top: 0;
 }
 .title-card{
@@ -97,7 +101,7 @@ p, table{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #1E2939;
+    background: rgba(213, 216, 220, 0.7);
     top: 0;
     left: -100%;
 
@@ -117,7 +121,7 @@ p, table{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #1E2939;
+    background: rgba(213, 216, 220, 0.7);
     left: 100%;
     top: 0;
 }
@@ -164,7 +168,7 @@ p, table{
         transform: translate(-50%,-50%);
     }
     .title-card h1{
-        color: #D5D8DC;
+        color: #17181A;
         position: relative;
         left: -200%;
         font-size: 1.4em;
@@ -185,15 +189,15 @@ p, table{
         left: 50%;
         transform: translateX(-50%);
         height: 50px;
-        border-top: #D5D8DC solid 2px;
+        border-top: #17181A solid 2px;
         width: 95%;
     }
     .title-nav > *{
         display: inline-block;
     }
     .vertical-line{
-        border-left: #D5D8DC solid 1px;
-        border-right: #D5D8DC solid 1px;
+        border-left: #17181A solid 1px;
+        border-right: #17181A solid 1px;
         width: 2px;
         height: 100%;
         margin-left: 1em;
@@ -204,7 +208,7 @@ p, table{
         top: -15px;
         font-size: 1em;
         width: 6.5em;
-        border: 2px #D5D8DC solid;
+        border: 2px #17181A solid;
         padding: .2em .5em;
         border-radius: 50px;
     }
@@ -316,7 +320,7 @@ p, table{
         height: 50px;
         position: absolute;
         bottom: 0;
-        background-color: #1E232A;
+        background-color: #464C54;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         z-index: 1000;
@@ -328,6 +332,7 @@ p, table{
         width: 33%;
         margin-left: -15px;
         font-size: 1.5em;
+        color: #D5D8DC;
     }
     .intro-nav .next:hover{
         color: #8B9BB1;
@@ -380,67 +385,31 @@ p, table{
     }
     .skill-nav .next{
         position: relative;
-        float: right;
+        float: left;
         height: 100%;
         width: 5em;
-        font-size: 1.5em;
+    }
+    .skill-nav .next:hover{
+        color: #17181A;
     }
     .skill-content-container{
         height: calc(100% - 50px);
         position: relative;
+        overflow: scroll;
     }
-    .skill-item{
-        position: relative;
-        top: 5%;
+    .skill-content{
+        margin: 1em auto;
     }
-    .skill-img{
-        overflow: hidden;
-        position: relative;
-        transform: translateX(-50%);
-        left: 50%;
-        background-color: #547fbe;
-        border-radius: 15px;
-        height: 170px;
-        width: 300px;
-        transition: .4s;
-    }
-    .skill-img h2{
-        position: relative;
-    }
-    .skill-img p {
-        margin: .5em;
-    }
-    .arrow{
-        position: absolute;
-        cursor: pointer;
-        width: 25px;
-        bottom: 0;
-        transition: .4s;
-        left: 50%;
-        transform: rotate(360deg) translateX(-50%);
-        transform-origin: center;
-    }
-    .skill-item-content{
-        position: relative;
-        transform: translateX(-50%);
-        left: 50%;
-        width: 0;
-        overflow: hidden;
-        height: 0;
-        transition: .4s;
-        background-color: #7Db1ff;
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .skill-content h4{
+        text-align: left;
+        margin-left: 20%;
     }
     .skill-graph{
         text-align: left;
     }
     .skill-graph-border{
         position: relative;
-        height: 16px;
+        height: 18px;
         width: 60%;
         border: #1E2939 2px solid;
         margin-left: 20%;
@@ -451,7 +420,8 @@ p, table{
         left: 0;
         transform: translateY(-50%);
         background-color: #1E2939;
-        height: 14px;
+        height: 16px;
+        text-align: left;
     }
     .skill-graph-progress p{
         font-size: 12px;
@@ -460,35 +430,6 @@ p, table{
     .skill-graph h4{
         font-size: 1.2em;
         margin-left: 20%;
-    }
-    .s-c-c1{
-        top: 5%;
-    }
-    .s-c-c2{
-        top: 10%;
-    }
-    .s-c-c3{
-        top: 15%;
-    }
-    .arrow:hover{
-        filter: invert(1);
-    }
-    .scActive{
-        height: 400px;
-        width: 90%;
-        padding: 1em;
-    }
-    .sActive{
-        height: 30px;
-        width: 90%;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom: #1B1D20 solid 2px;
-    }
-    .arrowActive{
-        left: 50%;
-        transform: rotate(180deg) translateX(50%);
-        transform-origin: center;
     }
 }
 /*tablet devices*/
@@ -503,7 +444,7 @@ p, table{
         margin-bottom: 2em;
     }
     .title-card h1{
-        color: #D5D8DC;
+        color: #17181A;
         position: relative;
         left: -100%;
         font-size: 2em;
@@ -521,15 +462,15 @@ p, table{
         left: 50%;
         transform: translate(-50%, -50%);
         height: 50px;
-        border-top: #D5D8DC solid 2px;
+        border-top: #17181A solid 2px;
         width: 40%;
     }
     .title-nav > *{
         display: inline-block;
     }
     .vertical-line{
-        border-left: #D5D8DC solid 1px;
-        border-right: #D5D8DC solid 1px;
+        border-left: #17181A solid 1px;
+        border-right: #17181A solid 1px;
         width: 2px;
         height: 100%;
         margin-left: 1em;
@@ -540,16 +481,16 @@ p, table{
     }
     .title-section .next{
         font-size: 1.4em;
-        width: 6.5em;
+        width: 7.5em;
         position: relative;
         top: -10px;
-        border: 2px #D5D8DC solid;
+        border: 2px #17181A solid;
         padding: .2em .5em;
         border-radius: 50px;
     }
     .title-section .next:hover{
         color: #8B9BB1;
-        border: solid 2px #8B9BB1;
+        border: solid 2px #1B1D20;
     }
 
     .intro-bottom{
@@ -557,7 +498,7 @@ p, table{
         bottom: 0;
         height: 50%;
         width: 100%;
-        background: #17181A;
+        background: #8C9199;
         z-index: 0;
     }
     .intro-card{
@@ -663,11 +604,12 @@ p, table{
         width: 5em;
         height: 50px;
         border-left: 2px solid #AAB6C5;;
+        color: #D5D8DC;
     }
     .intro-nav .next:hover{
         color: #8B9BB1;
         border: none;
-        border-left: #AAB6C5 solid 2px;
+        border-left: #1B1D20 solid 2px;
     }
     .tabSwitch{
         color: #D5D8DC;
@@ -736,57 +678,18 @@ p, table{
         width: 5em;
     }
     .skill-nav .next:hover{
-        color: #D5D8DC;
+        color: #17181A;
     }
     .skill-content-container{
         height: calc(100% - 50px);
         position: relative;
     }
-    .skill-item{
-        position: relative;
-        top: 5%;
+    .skill-content{
+        margin: 1em auto;
     }
-    .skill-img{
-        overflow: hidden;
-        position: relative;
-        transform: translateX(-50%);
-        left: 50%;
-        background-color: #547fbe;
-        border-radius: 15px;
-        height: 200px;
-        width: 400px;
-        transition: .4s;
-    }
-    .skill-img h2{
-        position: relative;
-    }
-    .skill-img p {
-        margin: .5em;
-    }
-    .arrow{
-        position: absolute;
-        cursor: pointer;
-        width: 25px;
-        bottom: 0;
-        transition: .4s;
-        left: 50%;
-        transform: rotate(360deg) translateX(-50%);
-        transform-origin: center;
-    }
-    .skill-item-content{
-        position: relative;
-        transform: translateX(-50%);
-        left: 50%;
-        width: 0;
-        overflow: hidden;
-        height: 0;
-        transition: .4s;
-        background-color: #7Db1ff;
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .skill-content h4{
+        text-align: left;
+        margin-left: 20%;
     }
     .skill-graph{
         text-align: left;
@@ -814,35 +717,6 @@ p, table{
     .skill-graph h4{
         font-size: 1.2em;
         margin-left: 20%;
-    }
-    .s-c-c1{
-        top: 5%;
-    }
-    .s-c-c2{
-        top: 10%;
-    }
-    .s-c-c3{
-        top: 15%;
-    }
-    .arrow:hover{
-        filter: invert(1);
-    }
-    .scActive{
-        height: 200px;
-        width: 90%;
-        padding: 1em;
-    }
-    .sActive{
-        height: 30px;
-        width: 90%;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom: #1B1D20 solid 2px;
-    }
-    .arrowActive{
-        left: 50%;
-        transform: rotate(180deg) translateX(50%);
-        transform-origin: center;
     }
 }
 /*desktop devices*/

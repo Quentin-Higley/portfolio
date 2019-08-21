@@ -56,6 +56,9 @@ $(".next").click(function () {
         $introSec.animate({
             left: "0"
         }, "linear");
+        $titleSec.animate({
+            opacity: '0'
+        });
         $titleCard.animate({
             opacity: "0"
         });
@@ -71,6 +74,9 @@ $(".next").click(function () {
         $titleCard.animate({
             opacity: "0"
         });
+        $titleSec.animate({
+            opacity: '0'
+        });
         $skillCard.animate({
             opacity: "1"
         });
@@ -82,6 +88,8 @@ $(".next").click(function () {
         }, "linear");
         $introCard.animate({
             opacity: "0"
+        });$titleSec.animate({
+            opacity: '1'
         });
         $titleCard.animate({
             opacity: "1"
@@ -94,6 +102,9 @@ $(".next").click(function () {
         }, "linear");
         $skillCard.animate({
             opacity: "0"
+        });
+        $titleSec.animate({
+            opacity: '1'
         });
         $titleCard.animate({
             opacity: "1"
@@ -146,378 +157,6 @@ $(".tabSwitch").click(function () {
             opacity: '1',
             zIndex: '3'
         },100);
-    }
-});
-
-$(".skill-img").click(function () {
-    let $button = this.id;
-    let $skillSoft = $('.s-c-c1');
-    let $arrow1 = $('.arrow1');
-    let $skillWeb = $('.s-c-c2');
-    let $arrow2 = $('.arrow2');
-    let $skillApp = $('.s-c-c3');
-    let $arrow3 = $('.arrow3');
-    let $h2_1 = $('.skill-h2-1');
-    let $h2_2 = $('.skill-h2-2');
-    let $h2_3 = $('.skill-h2-3');
-    let $softGraph = $('.soft .skill-graph-progress');
-    let $webGraph = $('.web .skill-graph-progress');
-    let $appGraph = $('.app .skill-graph-progress');
-
-    //animations for opening skill graphs
-    //software tabs
-    if($button === 'skill-soft'){
-        $(this).toggleClass('sActive');
-        $(this).next().toggleClass('scActive');
-        $arrow1.toggleClass('arrowActive');
-        //check if already opened
-        if ($skillSoft.hasClass('.active') !== true){
-            //animate title
-            $h2_1.animate({
-                left: '-30%'
-            });
-
-            //animate opening background
-            $skillSoft.addClass('.active');
-            $skillSoft.animate({
-                top: '20%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //animate others leaving
-            $skillWeb.animate({
-                bottom: '0',
-                opacity: '0',
-                zIndex: '-3'
-            });
-            $skillApp.animate({
-                bottom: '0',
-                opacity: '0',
-                zIndex: '-3'
-            });
-            //animate graphs
-            for (let i = 0; i < $softGraph.length; i++){
-                switch(i){
-                    case 0:
-                        $softGraph.eq(i).animate({
-                            width: '62%',
-                        });
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 1:
-                        $softGraph.eq(i).animate({
-                            width: '58%',
-                        });
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 2:
-                        $softGraph.eq(i).animate({
-                            width: '50%',
-                        });
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 3:
-                        $softGraph.eq(i).animate({
-                            width: '55%',
-                        });
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-        //if opened
-        else{
-            //close content
-            $h2_1.animate({
-                left: '0'
-            });
-            $skillSoft.removeClass('.active');
-            $skillSoft.animate({
-                top: '5%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //bring others back
-            $skillWeb.animate({
-                top: '10%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            $skillApp.animate({
-                top: '15%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //animate graphs
-            for (let i = 0; i < $softGraph.length; i++){
-                switch(i){
-                    case 0:
-                        $softGraph.eq(i).animate({
-                            width: '0',
-                        }, 200);
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 1:
-                        $softGraph.eq(i).animate({
-                            width: '0',
-                        }, 200);
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 2:
-                        $softGraph.eq(i).animate({
-                            width: '0',
-                        }, 200);
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 3:
-                        $softGraph.eq(i).animate({
-                            width: '0',
-                        }, 200);
-                        $softGraph.eq(i).css('background','1E2939');
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-
-    }
-
-    //web tabs
-    else if($button === 'skill-web'){
-        $(this).toggleClass('sActive');
-        $(this).next().toggleClass('scActive');
-        $arrow2.toggleClass('arrowActive');
-
-        //check if opened
-        if ($skillWeb.hasClass('.active') !== true){
-            //animate opening background
-            $h2_2.animate({
-                left: '-30%'
-            });
-            $skillWeb.addClass('.active');
-            $skillWeb.animate({
-                top: '-5%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //animate others leaving
-            $skillSoft.animate({
-                top: '0',
-                opacity: '0',
-                zIndex: '-3'
-            });
-            $skillApp.animate({
-                bottom: '0',
-                opacity: '0',
-                zIndex: '-3'
-            });
-            //animate opening graph
-            for (let i = 0; i < $webGraph.length; i++){
-                switch(i){
-                    case 0:
-                        $webGraph.eq(i).animate({
-                            width: '74%',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 1:
-                        $webGraph.eq(i).animate({
-                            width: '85%',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 2:
-                        $webGraph.eq(i).animate({
-                            width: '60%',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 3:
-                        $webGraph.eq(i).animate({
-                            width: '57%',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-        //if opened
-        else{
-            //close content
-            $h2_2.animate({
-                left: '0'
-            });
-            $skillWeb.removeClass('.active');
-            $skillWeb.animate({
-                top: '10%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //bring others back
-            $skillSoft.animate({
-                top: '5%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            $skillApp.animate({
-                top: '15%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //animate graphs
-            for (let i = 0; i < $webGraph.length; i++){
-                switch(i){
-                    case 0:
-                        $webGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 1:
-                        $webGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 2:
-                        $webGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 3:
-                        $webGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $webGraph.eq(i).css('background','1E2939');
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-    }
-
-    //app tabs
-    else if($button === 'skill-app'){
-        $(this).toggleClass('sActive');
-        $(this).next().toggleClass('scActive');
-        $arrow3.toggleClass('arrowActive');
-        //check if opened
-        if ($skillApp.hasClass('.active') !== true){
-            //animate opening background
-            $h2_3.animate({
-                left: '-30%'
-            });
-            $skillApp.addClass('.active');
-            $skillApp.animate({
-                top: '-25%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //animate others leaving
-            $skillSoft.animate({
-                top: '0',
-                opacity: '0',
-                zIndex: '-3'
-            });
-            $skillWeb.animate({
-                top: '0',
-                opacity: '0',
-                zIndex: '-3'
-            });
-            //animate opening graph
-            for (let i = 0; i < $appGraph.length; i++){
-                switch(i){
-                    case 0:
-                        $appGraph.eq(i).animate({
-                            width: '50%',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 1:
-                        $appGraph.eq(i).animate({
-                            width: '80%',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 2:
-                        $appGraph.eq(i).animate({
-                            width: '90%',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 3:
-                        $appGraph.eq(i).animate({
-                            width: '75%',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-        else{
-            //close content
-            $h2_3.animate({
-                left: '0'
-            });
-            $skillApp.removeClass('.active');
-            $skillApp.animate({
-                top: '15%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //bring others back
-            $skillSoft.animate({
-                top: '5%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            $skillWeb.animate({
-                top: '10%',
-                opacity: '1',
-                zIndex: '3'
-            });
-            //animate graphs
-            for (let i = 0; i < $appGraph.length; i++){
-                switch(i){
-                    case 0:
-                        $appGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 1:
-                        $appGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 2:
-                        $appGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    case 3:
-                        $appGraph.eq(i).animate({
-                            width: '0',
-                        });
-                        $appGraph.eq(i).css('background','1E2939');
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
     }
 });
 
